@@ -1,0 +1,50 @@
+{
+  "name": "MovimentoContabile",
+  "type": "object",
+  "properties": {
+    "registrazione_id": {
+      "type": "string",
+      "description": "ID della registrazione di testata"
+    },
+    "numero_registrazione": {
+      "type": "string",
+      "description": "Numero della registrazione di riferimento"
+    },
+    "data_registrazione": {
+      "type": "string",
+      "format": "date",
+      "description": "Data della registrazione"
+    },
+    "codice_conto": {
+      "type": "string",
+      "description": "Codice del conto contabile"
+    },
+    "nome_conto": {
+      "type": "string",
+      "description": "Nome del conto contabile"
+    },
+    "tipo_conto": {
+      "type": "string",
+      "enum": ["Attivo", "Passivo", "Ricavo", "Costo", "Patrimonio Netto"],
+      "description": "Tipo del conto"
+    },
+    "tipo_movimento": {
+      "type": "string",
+      "enum": ["Dare", "Avere"],
+      "description": "Sezione Dare o Avere"
+    },
+    "importo": {
+      "type": "number",
+      "description": "Importo del movimento"
+    },
+    "descrizione_riga": {
+      "type": "string",
+      "description": "Descrizione della riga di movimento"
+    },
+    "causale": {
+      "type": "string",
+      "description": "Causale della registrazione padre"
+    }
+  },
+  "required": ["registrazione_id", "codice_conto", "nome_conto", "tipo_movimento", "importo"]
+}

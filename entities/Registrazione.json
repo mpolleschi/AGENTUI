@@ -1,0 +1,49 @@
+{
+  "name": "Registrazione",
+  "type": "object",
+  "properties": {
+    "numero_registrazione": {
+      "type": "string",
+      "description": "Numero progressivo della registrazione"
+    },
+    "data_registrazione": {
+      "type": "string",
+      "format": "date",
+      "description": "Data della registrazione contabile"
+    },
+    "descrizione": {
+      "type": "string",
+      "description": "Descrizione della registrazione"
+    },
+    "causale": {
+      "type": "string",
+      "enum": ["Acquisto", "Vendita", "Pagamento", "Incasso", "Giroconto", "Stipendio", "Ammortamento", "Rettifica", "Apertura", "Chiusura", "Altro"],
+      "description": "Causale contabile"
+    },
+    "stato": {
+      "type": "string",
+      "enum": ["Bozza", "Confermata", "Annullata"],
+      "default": "Bozza",
+      "description": "Stato della registrazione"
+    },
+    "totale_dare": {
+      "type": "number",
+      "default": 0,
+      "description": "Totale sezione Dare"
+    },
+    "totale_avere": {
+      "type": "number",
+      "default": 0,
+      "description": "Totale sezione Avere"
+    },
+    "note": {
+      "type": "string",
+      "description": "Note aggiuntive"
+    },
+    "documento_riferimento": {
+      "type": "string",
+      "description": "Numero documento di riferimento (fattura, ricevuta, ecc.)"
+    }
+  },
+  "required": ["data_registrazione", "descrizione", "causale"]
+}

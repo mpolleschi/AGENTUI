@@ -1,0 +1,42 @@
+{
+  "name": "PianoDeiConti",
+  "type": "object",
+  "properties": {
+    "codice_conto": {
+      "type": "string",
+      "description": "Codice numerico del conto (es. 1001, 2001)"
+    },
+    "nome_conto": {
+      "type": "string",
+      "description": "Nome del conto contabile"
+    },
+    "tipo": {
+      "type": "string",
+      "enum": ["Attivo", "Passivo", "Ricavo", "Costo", "Patrimonio Netto"],
+      "description": "Tipo di conto contabile"
+    },
+    "categoria": {
+      "type": "string",
+      "description": "Categoria del conto (es. Immobilizzazioni, Crediti, Debiti)"
+    },
+    "sottocategoria": {
+      "type": "string",
+      "description": "Sottocategoria del conto"
+    },
+    "descrizione": {
+      "type": "string",
+      "description": "Descrizione estesa del conto"
+    },
+    "attivo": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se il conto è attivo e utilizzabile"
+    },
+    "saldo_iniziale": {
+      "type": "number",
+      "default": 0,
+      "description": "Saldo iniziale del conto"
+    }
+  },
+  "required": ["codice_conto", "nome_conto", "tipo"]
+}
